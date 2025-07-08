@@ -1,0 +1,82 @@
+{
+
+    "contactDetails":{
+        "name":"YONCA ESENDEMİR",
+        "title":"Full Stack Developer & Computer Engineer",
+        "phone":"+90 5380876236",
+        "email":"esendemiryonca@gmail.com",
+        "address": "Adana/Türkiye",
+        "linkedin":{
+            "url":"https://www.linkedin.com/in/yonca-esendemir-4049a8228/?originalSubdomain=tr",
+            "userName":"Yonca Esendemir"
+        },
+        "github":{
+            "url":"https://github.com/YoncaEsendemir?tab=repositories",
+            "userName":"YoncaEsendemir"
+        }
+    },
+
+    "skills":{
+        "frontend":["React.js","JavaScript","HTML","CSS","Tailwind CSS","Bootstrap","React Bootstrap","Radix UI","jQuery","Redux Toolkit"],
+        "backend":["Node.js","Express.js","PHP 8","Laravel","Spring Boot","REST API"],
+        "databseAndApi":["MySql","MSSQL","Rest API","JWT","Fetch API","Axios"  ],
+        "tools":["Git","GitHub","Postman","Docker","Postman","JavaFx","CKEditor","C#(Basic – Intermediate),Java(Basic – Intermediate)"]
+    },
+
+    "keyProjects":{
+
+    },
+
+    "workExperience":{
+        "company1":{
+            "name":"DATA KRİTİK TEKNOLOJİ TİC. LTD. ŞTİ",
+            "position":"Software Developer ",
+              "time":" March 2025 - June 2025 (3 months)",
+              "description":"Completed intensive software development internship during final university semester. Gained practical experience in enterprise-level software development."
+        },
+        "company2":{
+            "name":"COMPORT SOFTWARE INDUSTRY AND TRADE SOFTWARE COMPANY",
+            "position":"Software Development Intern",
+              "time":" 20-day intensive program",
+              "description":"Gained hands-on experience in software development practices and industry standards."
+        },
+        "company3":{
+            "name":"ACC Adana/Seyhan",
+            "position":"Customer Representative",
+              "time":" 2022 (4 months) ",
+              "description":"Customer advice and support"
+        }
+    },
+
+    "education":{
+        "university":{
+            "name":"İskenderun Technical University",
+            "department":"Computer Engineering",
+            "graduationYear":"2021 - 2025"
+        },
+
+        "highSchool":{
+            "name":"Germany Bad Waldsee Grund und WerkrealSchule"
+        }
+    },
+
+    "abutMySelf":{
+        "text":"Passionate Full Stack Developer with expertise in modern web technologies and a strong foundation in computer engineering. I specialize in building scalable web applications using React, Laravel, Spring  Boot, and various database technologies. My journey in software development has been driven by curiosity  and a commitment to continuous learning. I have successfully delivered multiple full-stack projects with  REST API integrations, from news platforms to comprehensive course management systems with payment gateways and real-time features."
+    },
+
+    "languages":{
+        "language1":{
+            "name":"Turkish",
+            "level":"Native"
+        },
+        "language3":{
+            "name":"German",
+            "level":"Native"
+        },
+        "language2":{
+            "name":"English",
+            "level":"Intermediate"
+        }
+
+    }
+}
