@@ -17,66 +17,237 @@
     },
 
     "skills":{
-        "frontend":["React.js","JavaScript","HTML","CSS","Tailwind CSS","Bootstrap","React Bootstrap","Radix UI","jQuery","Redux Toolkit"],
-        "backend":["Node.js","Express.js","PHP 8","Laravel","Spring Boot","REST API"],
-        "databseAndApi":["MySql","MSSQL","Rest API","JWT","Fetch API","Axios"  ],
-        "tools":["Git","GitHub","Postman","Docker","Postman","JavaFx","CKEditor","C#(Basic – Intermediate),Java(Basic – Intermediate)"]
+        "frontend":{
+            "id":1,
+            "title":"Frontend",
+            "icon": "FaGlobe ",
+            "teaxtColor":"bg-blue-100 text-blue-800 hover:bg-blue-200 ",
+           "skills" :["React.js","JavaScript","HTML","CSS","Tailwind CSS","Bootstrap","React Bootstrap","Radix UI","jQuery","Redux Toolkit"]
+        },
+        
+        "backend":{
+            "id":2,
+            "title":"Backend",
+            "icon": "FaServer ",
+            "teaxtColor":"bg-blue-200 text-blue-900 hover:bg-blue-300 ",
+            "skills":["Node.js","Express.js","PHP 8","Laravel","Spring Boot","REST API"]
+        },
+       "databseAndApi":{
+        "id":3,
+        "title":"Databse & API",
+        "icon": "FaDatabase",
+        "teaxtColor":"bg-blue-300 text-blue-900 hover:bg-blue-400 ",
+        "skills":["MySql","MSSQL","Rest API","JWT","Fetch API","Axios"  ]
+       },
+
+       "toolsAndOther":{
+        "id":4,
+        "title":"Tools & Other",
+        "icon": "FaTools ",
+        "teaxtColor":"bg-blue-400 text-white hover:bg-blue-500",
+        "skills":["Git","GitHub","Postman","Docker","Postman","JavaFx","CKEditor","C#(Basic – Intermediate),Java(Basic – Intermediate)"]
+    }
     },
 
-    "keyProjects":{
+    "additional":[
+        {
+            "title":"Additional Projects & Contributions",
+            "description":"Multiple applications available on GitHub including AI task management systems and various web applications.",
+            "icon":"🔧",
+            "contents":"All projects feature comprehensive REST API implementations, proper database relationships, and follow modern software development best practices."
+        }
+    ],
 
-    },
+    "keyProjectsCours":[
+        {
+            "name": "Advanced E-Learning Platform (Dual Implementation)",
+            "description": "Comprehensive course management system developed in two versions with payment integration and video content support.",
+            "icon": "FaBookOpen",
+            "versions": [
+              {
+                "name": "Spring Boot Version (Primary)",
+                "technologies": [
+                  "Spring Boot",
+                  "React.js",
+                  "MySQL",
+                  "Payment Gateway",
+                  "CKEditor"
+                ],
+                "features": [
+                  "More comprehensive and organized architecture",
+                  "Video upload functionality for lessons",
+                  "Advanced course categorization",
+                  "Integrated payment system",
+                  "Role-based admin/user dashboards"
+                ]
+              },
+              {
+                "name": "Laravel Version (Alternative)",
+                "technologies": [
+                  "Laravel",
+                  "React.js",
+                  "React Bootstrap",
+                  "MySQL"
+                ],
+                "features": [
+                  "Same core functionality with Laravel backend",
+                  "React Bootstrap for responsive UI",
+                  "Complete course management system",
+                  "REST API endpoints"
+                ]
+              }
+            ]
+          }
+    ],
 
-    "workExperience":{
-        "company1":{
+    "keyProjects":[
+        {
+            "title":" Server Deployment & Management",
+            "technologies":["Node.js","Express.js","MySQL","Docker","Bootstrap","REST API"],
+            "icon":"FaRocket",
+            "features":[
+                "Production server deployment",
+                "Robust API endpoints",
+                "Server configuration management",
+                "Performance optimization"
+            ]
+        },
+        {
+            "title":"Library Management Desktop",
+            "technologies":["Java","JavaFx","MySQL","","Bootstrap","REST API"],
+            "icon":"FaBook",
+            "features":[
+                "Cross-platform desktop solutions",
+                "Book cataloging and management",
+                "User and lending tracking",
+                "Category-based organization"
+            ]
+        }
+    ],
+
+    "prokeyProjects":[
+        { 
+            "id":1,
+            "title":"Ayvildiz Haber Ajansı - Professional News Platform",
+            "icon":"FaStar",
+            "description":"Comprehensive news agency platform with advanced content management, multimedia integration, and external API services. Successfully deployed to production environment in short timeframe.",
+            "technologies":[ "React.js",
+            "Node.js",
+            "MySQL",
+            "Docker",
+            "JWT",
+            "Bootstrap",
+            "CKEditor",
+            "Mutter",
+            "REST API"],
+            "features":[
+                {
+                    "title": "Full-Stack Architecture",
+                    "detail": "Node.js backend with MVC pattern"
+                  },
+                  {
+                    "title": "YouTube Integration",
+                    "detail": "URL embedding with database storage"
+                  },
+                  {
+                    "title": "File Management",
+                    "detail": "Image upload from local/URL with conversion"
+                  },
+                  {
+                    "title": "External APIs",
+                    "detail": "RSS feeds, weather, prayer times, currency"
+                  },
+                  {
+                    "title": "Security",
+                    "detail": "JWT authentication & role management"
+                  },
+                  {
+                    "title": "Database",
+                    "detail": "MySQL with Docker containerization"
+                  },
+                  {
+                    "title": "Production",
+                    "detail": "Successfully deployed with hosting setup"
+                  }
+            ],
+            "categories":["Politics","Economy","World News","Sports","Technology","Health"]
+
+        }  
+],
+
+    "workExperience":[
+        {
             "name":"DATA KRİTİK TEKNOLOJİ TİC. LTD. ŞTİ",
             "position":"Software Developer ",
               "time":" March 2025 - June 2025 (3 months)",
               "description":"Completed intensive software development internship during final university semester. Gained practical experience in enterprise-level software development."
         },
-        "company2":{
+        {
             "name":"COMPORT SOFTWARE INDUSTRY AND TRADE SOFTWARE COMPANY",
             "position":"Software Development Intern",
-              "time":" 20-day intensive program",
+              "time":"20-day intensive program",
               "description":"Gained hands-on experience in software development practices and industry standards."
         },
-        "company3":{
+        {
             "name":"ACC Adana/Seyhan",
             "position":"Customer Representative",
               "time":" 2022 (4 months) ",
               "description":"Customer advice and support"
         }
-    },
+    ],
 
-    "education":{
-        "university":{
-            "name":"İskenderun Technical University",
-            "department":"Computer Engineering",
-            "graduationYear":"2021 - 2025"
-        },
-
-        "highSchool":{
-            "name":"Germany Bad Waldsee Grund und WerkrealSchule"
-        }
-    },
+"education": [
+  {
+    "department": "Computer Engineering",
+    "name": "İskenderun Technical University",
+    "graduationYear": "2021 - 2025",
+    "graduationYearStyle": "text-xs text-gray-500"
+  },
+  {
+    "department": "High School",
+    "name": "Germany Bad Waldsee Grund und WerkrealSchule"
+  }
+],
 
     "abutMySelf":{
         "text":"Passionate Full Stack Developer with expertise in modern web technologies and a strong foundation in computer engineering. I specialize in building scalable web applications using React, Laravel, Spring  Boot, and various database technologies. My journey in software development has been driven by curiosity  and a commitment to continuous learning. I have successfully delivered multiple full-stack projects with  REST API integrations, from news platforms to comprehensive course management systems with payment gateways and real-time features."
     },
 
-    "languages":{
-        "language1":{
+    "languages":[
+        {
             "name":"Turkish",
             "level":"Native"
         },
-        "language3":{
+       {
             "name":"German",
             "level":"Native"
         },
-        "language2":{
+        {
             "name":"English",
             "level":"Intermediate"
         }
+    ],
 
+   "certificates" :[
+    {
+        "id":1,
+        "certificate": "PHP 8 Web Development - BTK Akademi"
+    },
+    {
+        "id":2,
+        "certificate": "Java Programming - BTK Akademi"
+    },
+    {
+        "id":3,
+        "certificate": "Career Development - BTK Akademi"
+    },
+    {
+        "id":3,
+        "certificate": "Occupational Safety - BİLGEİŞ ODTÜ"
+    },
+    {
+        "id":4,
+        "certificate": "IHA Sport/Amateur License"
     }
+   ]
 }

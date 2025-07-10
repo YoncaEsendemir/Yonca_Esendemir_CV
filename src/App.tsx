@@ -1,5 +1,8 @@
 import Header from './components/Header'
 import AboutMyself from './components/AboutMyself'
+import TechnicalSkills from './components/TechnicalSkills'
+import KeyProjects from './components/KeyProjects'
+import BottomSection from './components/BottomSection'
 import data from './data/data.json'
 
 function App() {
@@ -12,6 +15,9 @@ function App() {
       <div className="max-w-7xl mx-auto">
         <Header contactDetails={data.contactDetails} />
         <AboutMyself abutMySelf={data.abutMySelf} />
+        <TechnicalSkills technicalSkills={data.skills}/>
+        <KeyProjects additional={data.additional} keyProjectsCours={data.keyProjectsCours} keyProjects={data.keyProjects} prokeyProjects={data.prokeyProjects}  />
+        <BottomSection workExperience={data.workExperience} education={data.education} languages={data.languages} certificates={data.certificates}  />
       </div>
       </div>
     </div>
