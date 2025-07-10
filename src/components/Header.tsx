@@ -1,5 +1,6 @@
 
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from "react-icons/fa";
+import resim from "../image/cv_bilder.jpg"
 
 interface ContactDetails{
   name:string;
@@ -29,7 +30,7 @@ export default function Header({contactDetails}:ContactProps) {
       <div className="flex-shrink-0">
         <div className="relative">
           <img
-            src="/placeholder.svg?height=200&width=200"
+            src={resim}
             alt="Yonca Esendemir Profile Photo"
             className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full border-4 sm:border-6 border-white/20 shadow-2xl object-cover hover:scale-105 transition-transform duration-300"
           />

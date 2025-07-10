@@ -49,18 +49,18 @@
     }
     },
 
-    "additional":[
+    "additional":
         {
             "title":"Additional Projects & Contributions",
             "description":"Multiple applications available on GitHub including AI task management systems and various web applications.",
             "icon":"🔧",
             "contents":"All projects feature comprehensive REST API implementations, proper database relationships, and follow modern software development best practices."
-        }
-    ],
+        },
 
     "keyProjectsCours":[
         {
-            "name": "Advanced E-Learning Platform (Dual Implementation)",
+            "id":1,
+            "title": "Advanced E-Learning Platform (Dual Implementation)",
             "description": "Comprehensive course management system developed in two versions with payment integration and video content support.",
             "icon": "FaBookOpen",
             "versions": [
@@ -102,6 +102,7 @@
 
     "keyProjects":[
         {
+            "id":1,
             "title":" Server Deployment & Management",
             "technologies":["Node.js","Express.js","MySQL","Docker","Bootstrap","REST API"],
             "icon":"FaRocket",
@@ -113,6 +114,7 @@
             ]
         },
         {
+            "id":2,
             "title":"Library Management Desktop",
             "technologies":["Java","JavaFx","MySQL","","Bootstrap","REST API"],
             "icon":"FaBook",
@@ -125,54 +127,62 @@
         }
     ],
 
-    "prokeyProjects":[
-        { 
-            "id":1,
-            "title":"Ayvildiz Haber Ajansı - Professional News Platform",
-            "icon":"FaStar",
-            "description":"Comprehensive news agency platform with advanced content management, multimedia integration, and external API services. Successfully deployed to production environment in short timeframe.",
-            "technologies":[ "React.js",
-            "Node.js",
-            "MySQL",
-            "Docker",
-            "JWT",
-            "Bootstrap",
-            "CKEditor",
-            "Mutter",
-            "REST API"],
-            "features":[
-                {
-                    "title": "Full-Stack Architecture",
-                    "detail": "Node.js backend with MVC pattern"
-                  },
-                  {
-                    "title": "YouTube Integration",
-                    "detail": "URL embedding with database storage"
-                  },
-                  {
-                    "title": "File Management",
-                    "detail": "Image upload from local/URL with conversion"
-                  },
-                  {
-                    "title": "External APIs",
-                    "detail": "RSS feeds, weather, prayer times, currency"
-                  },
-                  {
-                    "title": "Security",
-                    "detail": "JWT authentication & role management"
-                  },
-                  {
-                    "title": "Database",
-                    "detail": "MySQL with Docker containerization"
-                  },
-                  {
-                    "title": "Production",
-                    "detail": "Successfully deployed with hosting setup"
-                  }
-            ],
-            "categories":["Politics","Economy","World News","Sports","Technology","Health"]
-
-        }  
+"prokeyProjects": [
+  { 
+    "id": 1,
+    "title": "Ayvildiz Haber Ajansı - Professional News Platform",
+    "description": "Comprehensive news agency platform with advanced content management, multimedia integration, and external API services. Successfully deployed to production environment in short timeframe.",
+    "icon": "FaStar",
+    "technologies": [
+      "React.js",
+      "Node.js",
+      "MySQL",
+      "Docker",
+      "JWT",
+      "Bootstrap",
+      "CKEditor",
+      "Mutter",
+      "REST API"
+    ],
+    "features": [
+      {
+        "title": "Full-Stack Architecture",
+        "detail": "Node.js backend with MVC pattern"
+      },
+      {
+        "title": "YouTube Integration",
+        "detail": "URL embedding with database storage"
+      },
+      {
+        "title": "File Management",
+        "detail": "Image upload from local/URL with conversion"
+      },
+      {
+        "title": "External APIs",
+        "detail": "RSS feeds, weather, prayer times, currency"
+      },
+      {
+        "title": "Security",
+        "detail": "JWT authentication & role management"
+      },
+      {
+        "title": "Database",
+        "detail": "MySQL with Docker containerization"
+      },
+      {
+        "title": "Production",
+        "detail": "Successfully deployed with hosting setup"
+      }
+    ],
+    "categories": [
+      "Politics",
+      "Economy",
+      "World News",
+      "Sports",
+      "Technology",
+      "Health"
+    ]
+  }
 ],
 
     "workExperience":[
