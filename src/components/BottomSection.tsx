@@ -80,7 +80,7 @@ export default function BottomSection({ workExperience, education, languages, ce
                             education.map((edu,index)=>(
                                 <div key={index} className="border-l-4 border-blue-600 pl-3 sm:pl-4 hover:bg-blue-50 p-2 rounded-r transition-colors">
                                 <h4 className="font-bold text-blue-900 text-sm sm:text-base">{edu.department}</h4>
-                                <p className="text-sm  text-gray-700">{edu.name}</p>
+                                <p className="text-sm text-gray-800">{edu.name}</p>
                                 {
                                     edu.graduationYear &&(
                                         <p className={`mt-1 ${edu.graduationYearStyle ?? "text-xs text-gray-500"}`}> {edu.graduationYear}</p>
