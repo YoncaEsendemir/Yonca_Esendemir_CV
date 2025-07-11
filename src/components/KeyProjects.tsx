@@ -77,7 +77,7 @@ export default function KeyProjects({ additional, keyProjectsCours, keyProjects,
 
       <div className="p-6 sm:p-8 lg:p-10 space-y-8">
         {/* Professional Key Projects */}
-        {prokeyProjects.map((project, index) => {
+        {prokeyProjects.map((project) => {
           const IconComponent = iconMap[project.icon] || FaCode
           return (
             <div key={project.id} className="group relative">
@@ -144,7 +144,7 @@ export default function KeyProjects({ additional, keyProjectsCours, keyProjects,
         })}
 
         {/* E-Learning Platforms */}
-        {keyProjectsCours.map((course, index) => {
+        {keyProjectsCours.map((course) => {
           const IconComponent = iconMap[course.icon] || FaBookOpen
           return (
             <div key={course.id} className="group relative">
