@@ -12,7 +12,6 @@ const iconMap: Record<string, React.ComponentType<any>> = {
 interface Additional {
   title: string
   description: string
-  icon: string
   contents: string
 }
 
@@ -57,164 +56,205 @@ interface KeyProjectsProps {
   additional: Additional
   keyProjectsCours: KeyProjectsCours[]
   keyProjects: KeyProjects[]
-  prokeyProjects: ProKeyProjects[] // Fixed: matching the prop name from App.tsx
+  prokeyProjects: ProKeyProjects[]
 }
 
 export default function KeyProjects({ additional, keyProjectsCours, keyProjects, prokeyProjects }: KeyProjectsProps) {
   return (
-    <div className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 bg-white shadow-xl border-0 rounded-lg overflow-hidden">
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white px-4 sm:px-6 lg:px-8 py-4 md:py-6">
-        <h3 className="flex items-center gap-2 md:gap-3 text-lg md:text-xl font-semibold">
-          <FaCode className="w-5 h-5 md:w-6 md:h-6" />
+    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-gray-50 shadow-2xl border border-gray-100">
+      {/* Top border'ı güncelle */}
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-slate-600 to-gray-600"></div>
+
+      {/* Header'ı güncelle */}
+      <div className="bg-gradient-to-r from-slate-800 to-gray-800 text-white px-6 sm:px-8 lg:px-10 py-6 md:py-8">
+        <h3 className="flex items-center gap-3 text-xl md:text-2xl font-bold">
+          <div className="p-2 bg-white/10 rounded-xl backdrop-blur-sm">
+            <FaCode className="w-5 h-5 md:w-6 md:h-6" />
+          </div>
           KEY PROJECTS
         </h3>
       </div>
 
-      <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
+      <div className="p-6 sm:p-8 lg:p-10 space-y-8">
         {/* Professional Key Projects */}
-        {prokeyProjects.map((project) => {
+        {prokeyProjects.map((project, index) => {
           const IconComponent = iconMap[project.icon] || FaCode
           return (
-            <div
-              key={project.id}
-              className="bg-gradient-to-r from-blue-50 to-blue-200 p-4 sm:p-6 rounded-xl border-l-4 sm:border-l-8 border-blue-700 hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <IconComponent className="w-6 h-6 text-blue-700" />
-                <h4 className="font-bold text-lg sm:text-xl lg:text-2xl text-blue-900">{project.title}</h4>
-              </div>
+            <div key={project.id} className="group relative">
+              {/* Professional projects için daha sade renkler */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-slate-600 to-gray-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
 
-              <p className="text-gray-700 mb-3 sm:mb-4 text-sm sm:text-base lg:text-lg leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-blue-700 text-white hover:bg-blue-600"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                {project.features.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-2">
-                    <span className="text-blue-500 font-bold text-lg">•</span>
-                    <span className="text-sm lg:text-base">
-                      <strong>{feature.title}:</strong> {feature.detail}
-                    </span>
+              <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 border border-gray-100 shadow-xl">
+                <div className="flex items-center gap-4 mb-6">
+                  {/* Icon background'ını güncelle */}
+                  <div className="p-4 bg-gradient-to-r from-slate-600 to-gray-600 rounded-2xl text-white shadow-lg">
+                    <IconComponent className="w-8 h-8" />
                   </div>
-                ))}
-              </div>
-
-              {project.categories && project.categories.length > 0 && (
-                <div className="mt-4">
-                  <h5 className="font-semibold text-blue-800 mb-2">Categories:</h5>
-                  <div className="flex flex-wrap gap-2">
-                    {project.categories.map((category, index) => (
-                      <span key={index} className="px-2 py-1 bg-blue-200 text-blue-800 rounded text-xs">
-                        {category}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          )
-        })}
-
-        {/* E-Learning Platforms */}
-        {keyProjectsCours.map((course) => {
-          const IconComponent = iconMap[course.icon] || FaBookOpen
-          return (
-            <div
-              key={course.id}
-              className="bg-gradient-to-r from-blue-50 to-blue-200 p-4 sm:p-6 rounded-xl border-l-4 sm:border-l-8 border-blue-600 hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <IconComponent className="w-6 h-6 text-blue-600" />
-                <h4 className="font-bold text-lg sm:text-xl lg:text-2xl text-blue-900">{course.title}</h4>
-              </div>
-
-              <p className="text-gray-700 mb-4 text-sm sm:text-base lg:text-lg leading-relaxed">{course.description}</p>
-
-              <div className="space-y-4">
-                {course.versions.map((version, index) => (
-                  <div key={index} className="bg-white p-4 rounded-lg border border-blue-200">
-                    <h5 className="font-semibold text-blue-800 mb-2">{version.name}</h5>
-
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {version.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-blue-600 text-white"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <ul className="text-sm space-y-1">
-                      {version.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-2">
-                          <span className="text-green-500 font-bold">•</span>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )
-        })}
-
-        {/* Other Projects */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-          {keyProjects.map((project) => {
-            const IconComponent = iconMap[project.icon] || FaCode
-            return (
-              <div
-                key={project.id}
-                className="bg-gradient-to-r from-blue-50 to-blue-200 p-4 sm:p-6 rounded-xl border-l-4 border-blue-500 hover:shadow-lg transition-shadow"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <IconComponent className="w-5 h-5 text-blue-600" />
-                  <h4 className="font-bold text-base sm:text-lg lg:text-xl text-blue-800">{project.title}</h4>
+                  <h4 className="font-bold text-2xl lg:text-3xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                    {project.title}
+                  </h4>
                 </div>
 
-                <div className="flex flex-wrap gap-1 mb-2 sm:mb-3">
-                  {project.technologies.map((tech, index) => (
+                <p className="text-gray-700 mb-6 text-lg leading-relaxed">{project.description}</p>
+
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {project.technologies.map((tech, techIndex) => (
                     <span
-                      key={index}
-                      className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-blue-600 text-white"
+                      key={techIndex}
+                      className="px-4 py-2 bg-gradient-to-r from-slate-600 to-gray-600 text-white rounded-xl text-sm font-medium shadow-lg hover:shadow-xl transition-shadow duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <ul className="text-xs sm:text-sm space-y-1">
-                  {project.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-blue-500 font-bold">•</span>
-                      <span>{feature}</span>
-                    </li>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {project.features.map((feature, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
+                    >
+                      <div className="w-2 h-2 bg-gradient-to-r from-slate-600 to-gray-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <span className="font-semibold text-gray-800">{feature.title}:</span>
+                        <span className="text-gray-600 ml-2">{feature.detail}</span>
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
+
+                {project.categories && project.categories.length > 0 && (
+                  <div className="mt-6 p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100">
+                    <h5 className="font-semibold text-gray-800 mb-3">Categories:</h5>
+                    <div className="flex flex-wrap gap-2">
+                      {project.categories.map((category, catIndex) => (
+                        <span
+                          key={catIndex}
+                          className="px-3 py-1 bg-gradient-to-r from-gray-200 to-gray-300 text-gray-700 rounded-lg text-sm font-medium"
+                        >
+                          {category}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )
+        })}
+
+        {/* E-Learning Platforms */}
+        {keyProjectsCours.map((course, index) => {
+          const IconComponent = iconMap[course.icon] || FaBookOpen
+          return (
+            <div key={course.id} className="group relative">
+              {/* E-Learning projects için */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-slate-500 to-gray-500 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
+
+              <div className="relative bg-gradient-to-br from-white to-blue-50 rounded-3xl p-8 border border-blue-100 shadow-xl">
+                <div className="flex items-center gap-4 mb-6">
+                  {/* E-Learning projects için */}
+                  <div className="p-4 bg-gradient-to-r from-slate-500 to-gray-500 rounded-2xl text-white shadow-lg">
+                    <IconComponent className="w-8 h-8" />
+                  </div>
+                  <h4 className="font-bold text-2xl lg:text-3xl bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">
+                    {course.title}
+                  </h4>
+                </div>
+
+                <p className="text-gray-700 mb-6 text-lg leading-relaxed">{course.description}</p>
+
+                <div className="space-y-6">
+                  {course.versions.map((version, versionIndex) => (
+                    <div key={versionIndex} className="bg-white rounded-2xl p-6 border border-blue-200 shadow-lg">
+                      <h5 className="font-bold text-xl text-blue-800 mb-4">{version.name}</h5>
+
+                      <div className="flex flex-wrap gap-3 mb-4">
+                        {version.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-sm font-medium shadow-md"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="space-y-3">
+                        {version.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-700">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )
+        })}
+
+        {/* Other Projects */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {keyProjects.map((project, index) => {
+            const IconComponent = iconMap[project.icon] || FaCode
+            const gradients = ["from-slate-600 to-gray-600", "from-gray-600 to-slate-700"]
+            const gradient = gradients[index % gradients.length]
+
+            return (
+              <div key={project.id} className="group relative">
+                <div
+                  className={`absolute -inset-1 bg-gradient-to-r ${gradient} rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300`}
+                ></div>
+
+                <div className="relative bg-white rounded-2xl p-6 border border-gray-100 shadow-lg">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`p-3 bg-gradient-to-r ${gradient} rounded-xl text-white shadow-lg`}>
+                      <IconComponent className="w-6 h-6" />
+                    </div>
+                    <h4 className="font-bold text-xl text-gray-800">{project.title}</h4>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className={`px-3 py-1 bg-gradient-to-r ${gradient} text-white rounded-lg text-xs font-medium shadow-md`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="space-y-2">
+                    {project.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start gap-2">
+                        <div className={`w-2 h-2 bg-gradient-to-r ${gradient} rounded-full mt-2 flex-shrink-0`}></div>
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             )
           })}
         </div>
 
         {/* Additional Projects Section */}
-        <div className="bg-gradient-to-r from-blue-50 to-blue-300 p-4 sm:p-6 rounded-xl border-l-4 sm:border-l-8 border-blue-500 hover:shadow-lg transition-shadow">
-          <h4 className="font-bold text-base sm:text-lg lg:text-xl mb-2 sm:mb-3 text-blue-900">{additional.title}</h4>
-          <p className="text-gray-700 mb-2 text-sm sm:text-base">{additional.description}</p>
-          <p className="text-gray-600 italic text-xs sm:text-sm">{additional.contents}</p>
+        <div className="group relative">
+          {/* Additional projects için */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-slate-600 to-gray-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
+
+          <div className="relative bg-gradient-to-br from-white to-indigo-50 rounded-2xl p-6 border border-indigo-100 shadow-lg">
+            {/* Additional projects için */}
+            <h4 className="font-bold text-xl mb-4 bg-gradient-to-r from-slate-700 to-gray-700 bg-clip-text text-transparent">
+              {additional.title}
+            </h4>
+            <p className="text-gray-700 mb-3 text-base">{additional.description}</p>
+            <p className="text-gray-600 italic text-sm">{additional.contents}</p>
+          </div>
         </div>
       </div>
     </div>

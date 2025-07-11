@@ -1,76 +1,98 @@
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from "react-icons/fa"
 
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from "react-icons/fa";
-import resim from "../image/cv_bilder.jpg"
-
-interface ContactDetails{
-  name:string;
-  title:string;
-  phone:string;
-  email:string;
-  address:string;
-  linkedin:{
-    url:string;
-    userName:string;
-  };
-  github:{
-    url:string;
-    userName:string;
-  };
+interface ContactDetails {
+  name: string
+  title: string
+  phone: string
+  email: string
+  address: string
+  linkedin: {
+    url: string
+    userName: string
+  }
+  github: {
+    url: string
+    userName: string
+  }
 }
 
 interface ContactProps {
-  contactDetails:ContactDetails;
+  contactDetails: ContactDetails
 }
 
-export default function Header({contactDetails}:ContactProps) {
+export default function Header({ contactDetails }: ContactProps) {
   return (
-    <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white p-4 sm:p-6 md:p-8 lg:p-10 rounded-t-xl md:rounded-t-2xl shadow-2xl">
-    <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
-      {/* Profile Photo */}
-      <div className="flex-shrink-0">
-        <div className="relative">
-          <img
-            src={resim}
-            alt="Yonca Esendemir Profile Photo"
-            className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full border-4 sm:border-6 border-white/20 shadow-2xl object-cover hover:scale-105 transition-transform duration-300"
-          />
-          <div className="absolute inset-0 rounded-full bg-gradient-to-t from-blue-900/20 to-transparent"></div>
-        </div>
-      </div>
+    // Header'ı daha koyu ve şık yap
+    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900 p-1">
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 backdrop-blur-3xl"></div>
 
-      {/* Text Content */}
-      <div className="flex-1 text-center lg:text-left">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 md:mb-3 tracking-wide">
-          {contactDetails.name}
-        </h1>
-        <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light mb-4 md:mb-6 text-blue-100">
-          {contactDetails.title}
-        </h2>
+      <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-white/10">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          {/* Profile Photo */}
+          <div className="flex-shrink-0 relative group">
+            <div className="absolute -inset-4 bg-gradient-to-r from-slate-600 to-gray-600 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative">
+              <img
+                src="/placeholder.svg?height=200&width=200"
+                alt="Yonca Esendemir Profile Photo"
+                className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full border-4 border-white/20 shadow-2xl object-cover group-hover:scale-105 transition-all duration-500"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+            </div>
+          </div>
 
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 text-blue-100">
-          <div className="flex items-center justify-center gap-2 bg-blue-800/30 px-3 md:px-4 py-2 rounded-full hover:bg-blue-800/50 transition-colors text-xs sm:text-sm lg:text-base">
-            <FaPhone className="w-3 h-3 md:w-4 md:h-4" />
-            <span>{contactDetails.phone}</span>
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-blue-800/30 px-3 md:px-4 py-2 rounded-full hover:bg-blue-800/50 transition-colors text-xs sm:text-sm lg:text-base">
-            <FaEnvelope className="w-3 h-3 md:w-4 md:h-4" />
-            <span className="break-all sm:break-normal">{contactDetails.email}</span>
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-blue-800/30 px-3 md:px-4 py-2 rounded-full hover:bg-blue-800/50 transition-colors text-xs sm:text-sm lg:text-base">
-            <FaMapMarkerAlt className="w-3 h-3 md:w-4 md:h-4" />
-            <span>{contactDetails.address}</span>
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-blue-800/30 px-3 md:px-4 py-2 rounded-full hover:bg-blue-800/50 transition-colors text-xs sm:text-sm lg:text-base">
-            <FaGithub className="w-3 h-3 md:w-4 md:h-4" />
-            <a href={contactDetails.github.url} target="_blank" rel="noopener noreferrer" className="break-all sm:break-normal">{contactDetails.github.userName}</a>
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-blue-800/30 px-3 md:px-4 py-2 rounded-full hover:bg-blue-800/50 transition-colors text-xs sm:text-sm lg:text-base">
-            <FaLinkedin className="w-3 h-3 md:w-4 md:h-4" />
-            <a href={contactDetails.linkedin.url} className="break-all sm:break-normal" target="_blank" rel="noopener noreferrer">{contactDetails.linkedin.userName}</a>
+          {/* Text Content */}
+          <div className="flex-1 text-center lg:text-left text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent leading-tight">
+              {contactDetails.name}
+            </h1>
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-8 text-gray-300">
+              {contactDetails.title}
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-white/90">
+              <div className="group flex items-center justify-center lg:justify-start gap-3 bg-white/5 backdrop-blur-sm px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300 border border-white/10">
+                <FaPhone className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" />
+                <span className="text-sm lg:text-base">{contactDetails.phone}</span>
+              </div>
+
+              <div className="group flex items-center justify-center lg:justify-start gap-3 bg-white/5 backdrop-blur-sm px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300 border border-white/10">
+                <FaEnvelope className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" />
+                <span className="text-sm lg:text-base break-all sm:break-normal">{contactDetails.email}</span>
+              </div>
+
+              <div className="group flex items-center justify-center lg:justify-start gap-3 bg-white/5 backdrop-blur-sm px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300 border border-white/10">
+                <FaMapMarkerAlt className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" />
+                <span className="text-sm lg:text-base">{contactDetails.address}</span>
+              </div>
+
+              <div className="group flex items-center justify-center lg:justify-start gap-3 bg-white/5 backdrop-blur-sm px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300 border border-white/10">
+                <FaGithub className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" />
+                <a
+                  href={contactDetails.github.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm lg:text-base break-all sm:break-normal hover:text-gray-200 transition-colors"
+                >
+                  {contactDetails.github.userName}
+                </a>
+              </div>
+
+              <div className="group flex items-center justify-center lg:justify-start gap-3 bg-white/5 backdrop-blur-sm px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300 border border-white/10 sm:col-span-2 lg:col-span-1">
+                <FaLinkedin className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" />
+                <a
+                  href={contactDetails.linkedin.url}
+                  className="text-sm lg:text-base break-all sm:break-normal hover:text-gray-200 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {contactDetails.linkedin.userName}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  );
+  )
 }
