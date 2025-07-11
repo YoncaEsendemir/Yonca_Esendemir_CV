@@ -149,15 +149,15 @@ export default function KeyProjects({ additional, keyProjectsCours, keyProjects,
           return (
             <div key={course.id} className="group relative">
               {/* E-Learning projects için */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-slate-500 to-gray-500 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-slate-600 to-gray-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
 
-              <div className="relative bg-gradient-to-br from-white to-blue-50 rounded-3xl p-8 border border-blue-100 shadow-xl">
+              <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 border border-gray-100 shadow-xl">
                 <div className="flex items-center gap-4 mb-6">
                   {/* E-Learning projects için */}
-                  <div className="p-4 bg-gradient-to-r from-slate-500 to-gray-500 rounded-2xl text-white shadow-lg">
+                  <div className="p-4 bg-gradient-to-r from-slate-600 to-gray-600 rounded-2xl text-white shadow-lg">
                     <IconComponent className="w-8 h-8" />
                   </div>
-                  <h4 className="font-bold text-2xl lg:text-3xl bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">
+                  <h4 className="font-bold text-2xl lg:text-3xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
                     {course.title}
                   </h4>
                 </div>
@@ -166,14 +166,14 @@ export default function KeyProjects({ additional, keyProjectsCours, keyProjects,
 
                 <div className="space-y-6">
                   {course.versions.map((version, versionIndex) => (
-                    <div key={versionIndex} className="bg-white rounded-2xl p-6 border border-blue-200 shadow-lg">
-                      <h5 className="font-bold text-xl text-blue-800 mb-4">{version.name}</h5>
+                    <div key={versionIndex} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                      <h5 className="font-bold text-xl text-gray-800 mb-4">{version.name}</h5>
 
                       <div className="flex flex-wrap gap-3 mb-4">
                         {version.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-sm font-medium shadow-md"
+                            className="px-3 py-2 bg-gradient-to-r from-slate-600 to-gray-600 text-white rounded-lg text-sm font-medium shadow-md"
                           >
                             {tech}
                           </span>
@@ -183,7 +183,7 @@ export default function KeyProjects({ additional, keyProjectsCours, keyProjects,
                       <div className="space-y-3">
                         {version.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-gradient-to-r from-slate-600 to-gray-600 rounded-full mt-2 flex-shrink-0"></div>
                             <span className="text-gray-700">{feature}</span>
                           </div>
                         ))}
